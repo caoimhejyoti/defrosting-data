@@ -35,6 +35,7 @@ def convert_f_to_c(temp_in_farenheit):
     Returns:
         A float representing a temperature in degrees celcius, rounded to 1dp.
     """
+    # pass(f"{temp_in_celcius:.1f}")
     pass
 
 
@@ -51,13 +52,26 @@ def calculate_mean(weather_data):
 
 def load_data_from_csv(csv_file):
     """Reads a csv file and stores the data in a list.
-
+    
     Args:
         csv_file: a string representing the file path to a csv file.
     Returns:
         A list of lists, where each sublist is a (non-empty) line in the csv file.
     """
-    pass
+
+    # with open("tests/data/example_two.csv", encoding="utf-8") as csv_file:
+    reader = csv.reader(csv_file)
+    next(reader)
+    my_list = []
+    for line in reader:
+        # if the list is blank....
+        if line == None:
+            next
+        else:
+            my_list.append([f"{line[0]}", int(line[1]), int(line[2])])
+    return my_list
+
+# call functions to act as a clg
 
 
 def find_min(weather_data):
@@ -102,3 +116,4 @@ def generate_daily_summary(weather_data):
         A string containing the summary information.
     """
     pass
+
