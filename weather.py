@@ -3,7 +3,7 @@ from datetime import datetime
 
 DEGREE_SYBMOL = u"\N{DEGREE SIGN}C"
 
-
+# COMPLETE
 def format_temperature(temp):
     """Takes a temperature and returns it in string format with the degrees
         and celcius symbols.
@@ -26,7 +26,7 @@ def convert_date(iso_string):
     """
     pass
 
-
+#FIXME: working just need to round to 1dp.
 def convert_f_to_c(temp_in_farenheit):
     """Converts an temperature from farenheit to celcius.
 
@@ -35,8 +35,13 @@ def convert_f_to_c(temp_in_farenheit):
     Returns:
         A float representing a temperature in degrees celcius, rounded to 1dp.
     """
-    # pass(f"{temp_in_celcius:.1f}")
-    pass
+    print()
+    conversion = ((int(temp_in_farenheit) - 32)* 5/9)
+    print(conversion)
+    celcius = round(conversion,1)
+    return celcius
+
+print(convert_f_to_c(64.4))
 
 
 def calculate_mean(weather_data):
@@ -70,6 +75,7 @@ def load_data_from_csv(csv_file):
         else:
             my_list.append([f"{line[0]}", int(line[1]), int(line[2])])
     return my_list
+
 
 # call functions to act as a clg
 
