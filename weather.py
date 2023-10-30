@@ -120,7 +120,18 @@ def find_max(weather_data):
     Returns:
         The maximum value and it's position in the list.
     """
+    print(f"weather_data type: {type(weather_data [0])}") #expected value
+    convert_data = []
+    for element in weather_data:
+        convert_data.append(float(element))
+    print(f"convert_data: {convert_data}") #expected value
+    print(f"convert_data type: {type(convert_data [0])}") #expected value
+    max_value = max(convert_data)
+    print(f"max_value: {max_value}") #expected value 
+    position = convert_data.index(max_value)    
+    print(f"position: {position}") #expected value
     pass
+print(find_max([49, 57, 56, 55, 53]))
 
 
 def generate_summary(weather_data):
