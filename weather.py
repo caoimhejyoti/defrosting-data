@@ -49,6 +49,7 @@ def convert_f_to_c(temp_in_farenheit):
     celcius = round(temp_conversion,1)
     return celcius
 
+# COMPLETE!
 def calculate_mean(weather_data):
     """Calculates the mean value from a list of numbers.
 
@@ -57,17 +58,20 @@ def calculate_mean(weather_data):
     Returns:
         A float representing the mean value.
     """
-    convert_data = float(weather_data)
-    print(f"convert_data: {convert_data}")
-    length_of_input= len(weather_data)
-    print(f"length_of_input: {length_of_input}")
-    sum_of_input = sum(weather_data)
-    print(f"fum_of_input: {sum_of_input}")
+    convert_data = []
+    for element in weather_data:
+        convert_data.append(float(element))
+    # print(f"convert_data: {convert_data}") #expected value
+    # print(f"convert_data type: {type(convert_data [0])}") #expected value
+    length_of_input= len(convert_data) 
+    # print(f"length_of_input: {length_of_input}") #expected value
+    sum_of_input = sum(convert_data)
+    # print(f"fum_of_input: {sum_of_input}") #expected value
     mean = sum_of_input/length_of_input
-    print(f"mean: {mean}")
+    # print(f"mean: {mean}") #expected value
     return mean
 
-print(calculate_mean([49, 57, 56, 55, 53]))
+# print(calculate_mean([49, 57, 56, 55, 53]))
 
 def load_data_from_csv(csv_file):
     """Reads a csv file and stores the data in a list.
