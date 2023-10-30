@@ -3,7 +3,7 @@ from datetime import datetime
 
 DEGREE_SYBMOL = u"\N{DEGREE SIGN}C"
 
-# COMPLETE
+# COMPLETE!
 def format_temperature(temp):
     """Takes a temperature and returns it in string format with the degrees
         and celcius symbols.
@@ -15,7 +15,7 @@ def format_temperature(temp):
     """
     return f"{temp}{DEGREE_SYBMOL}"
 
-#COMPLETE!
+# COMPLETE!
 def convert_date(iso_string):
     """Converts and ISO formatted date into a human readable format.
 
@@ -36,7 +36,7 @@ def convert_date(iso_string):
 
 # print(convert_date("2021-10-01T07:00:00+08:00")) #expected value
 
-#COMPLETE!
+# COMPLETE!
 def convert_f_to_c(temp_in_farenheit):
     """Converts an temperature from farenheit to celcius.
 
