@@ -33,7 +33,6 @@ def convert_date(iso_string):
     date_conversion = (raw_date.strftime("%A %d %B %Y"))
     # print(f"date_conversion: {date_conversion}") #expected value
     return(date_conversion)
-
 # print(convert_date("2021-10-01T07:00:00+08:00")) #expected value
 
 # COMPLETE!
@@ -70,7 +69,6 @@ def calculate_mean(weather_data):
     mean = sum_of_input/length_of_input
     # print(f"mean: {mean}") #expected value
     return mean
-
 # print(calculate_mean([49, 57, 56, 55, 53]))
 
 def load_data_from_csv(csv_file):
@@ -93,9 +91,6 @@ def load_data_from_csv(csv_file):
         else:
             my_list.append([f"{line[0]}", int(line[1]), int(line[2])])
     return my_list
-
-
-# call functions to act as a clg
 
 
 def find_min(weather_data):
