@@ -101,18 +101,18 @@ def find_min(weather_data):
     Returns:
         The minium value and it's position in the list.
     """
-    print(f"weather_data type: {type(weather_data [0])}") #expected value
+    # print(f"weather_data type: {type(weather_data [0])}") #expected value
     convert_data = []
     for element in weather_data:
         convert_data.append(float(element))
-    print(f"convert_data: {convert_data}") #expected value
-    print(f"convert_data type: {type(convert_data [0])}") #expected value
-    print(min(convert_data)) #expected value but not the second half of the answer.
+    # print(f"convert_data: {convert_data}") #expected value
+    # print(f"convert_data type: {type(convert_data [0])}") #expected value
+    # print(min(convert_data)) #expected value but not the second half of the answer.
     return(min(convert_data))
     
-print(find_min([-10, -8, 2, -16, 4]))
+# print(find_min([-10, -8, 2, -16, 4]))
 
-# FIXME: working for all but empty sequence and repeated values.
+# FIXME: working for all but repeated values.
 def find_max(weather_data):
     """Calculates the maximum value in a list of numbers.
 
@@ -127,11 +127,23 @@ def find_max(weather_data):
         convert_data.append(float(element))
     # print(f"convert_data: {convert_data}") #expected value
     # print(f"convert_data type: {type(convert_data [0])}") #expected value
-    max_value = max(convert_data)
+    max_value = max(convert_data, default=None)
     # print(f"max_value: {max_value}") #expected value 
-    position = convert_data.index(max_value)    
+
+    #tested this loop and moving the return within the loop but just returned empty ()
+    # if convert_data == True: 
+
+    if max_value ==  None:
+        return ()
+    else:
+        position = convert_data.index(max_value)
+        return (max_value, position)
+    #     return (max_value, position)    
+    # else:
+    #     return ()
+
     # print(f"position: {position}") #expected value
-    return (max_value, position)
+    # return (max_value, position)
 # print(find_max([49, 57, 56, 55, 53]))
 
 
