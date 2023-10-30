@@ -71,6 +71,7 @@ def calculate_mean(weather_data):
     return mean
 # print(calculate_mean([49, 57, 56, 55, 53]))
 
+# FIXME:
 def load_data_from_csv(csv_file):
     """Reads a csv file and stores the data in a list.
     
@@ -136,8 +137,7 @@ def find_max(weather_data):
                 position.append(value) 
         return (max_value, position[-1])
 
-
-
+# FIXME:
 def generate_summary(weather_data):
     """Outputs a summary for the given weather data.
 
@@ -148,7 +148,7 @@ def generate_summary(weather_data):
     """
     pass
 
-
+# FIXME:
 def generate_daily_summary(weather_data):
     """Outputs a daily summary for the given weather data.
 
