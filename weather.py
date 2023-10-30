@@ -57,8 +57,17 @@ def calculate_mean(weather_data):
     Returns:
         A float representing the mean value.
     """
-    pass
+    convert_data = float(weather_data)
+    print(f"convert_data: {convert_data}")
+    length_of_input= len(weather_data)
+    print(f"length_of_input: {length_of_input}")
+    sum_of_input = sum(weather_data)
+    print(f"fum_of_input: {sum_of_input}")
+    mean = sum_of_input/length_of_input
+    print(f"mean: {mean}")
+    return mean
 
+print(calculate_mean([49, 57, 56, 55, 53]))
 
 def load_data_from_csv(csv_file):
     """Reads a csv file and stores the data in a list.
