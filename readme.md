@@ -35,6 +35,10 @@ https://stackoverflow.com/questions/48971320/how-to-search-for-a-word-through-a-
 
 https://jerrynsh.com/3-useful-python-f-string-tricks-you-probably-dont-know/
 
+https://bobbyhadz.com/blog/python-remove-everything-after-character
+
+https://www.datacamp.com/tutorial/converting-strings-datetime-objects
+
 ## License
 
 This project is using the following license:
