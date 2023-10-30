@@ -92,7 +92,7 @@ def load_data_from_csv(csv_file):
             my_list.append([f"{line[0]}", int(line[1]), int(line[2])])
     return my_list
 
-
+# COMPLETE!
 def find_min(weather_data):
     """Calculates the minimum value in a list of numbers.
 
@@ -101,18 +101,20 @@ def find_min(weather_data):
     Returns:
         The minium value and it's position in the list.
     """
-    print(f"weather_data type: {type(weather_data [0])}") #expected value
     convert_data = []
     for element in weather_data:
         convert_data.append(float(element))
-    print(f"convert_data: {convert_data}") #expected value
-    print(f"convert_data type: {type(convert_data [0])}") #expected value
-    print(min(convert_data)) #expected value but not the second half of the answer.
-    return(min(convert_data))
-    
-print(find_min([-10, -8, 2, -16, 4]))
+    min_value = min(convert_data, default=None)
+    if min_value ==  None:
+        return ()
+    else:
+        position = []
+        for value in range(len(convert_data)):
+            if convert_data[value] == min_value:
+                position.append(value) 
+        return (min_value, position[-1])
 
-# FIXME: working for all but empty sequence and repeated values.
+# COMPLETE!
 def find_max(weather_data):
     """Calculates the maximum value in a list of numbers.
 
@@ -121,18 +123,19 @@ def find_max(weather_data):
     Returns:
         The maximum value and it's position in the list.
     """
-    # print(f"weather_data type: {type(weather_data [0])}") #expected value
     convert_data = []
     for element in weather_data:
         convert_data.append(float(element))
-    # print(f"convert_data: {convert_data}") #expected value
-    # print(f"convert_data type: {type(convert_data [0])}") #expected value
-    max_value = max(convert_data)
-    # print(f"max_value: {max_value}") #expected value 
-    position = convert_data.index(max_value)    
-    # print(f"position: {position}") #expected value
-    return (max_value, position)
-# print(find_max([49, 57, 56, 55, 53]))
+    max_value = max(convert_data, default=None)
+    if max_value ==  None:
+        return ()
+    else:
+        position = []
+        for value in range(len(convert_data)):
+            if convert_data[value] == max_value:
+                position.append(value) 
+        return (max_value, position[-1])
+
 
 
 def generate_summary(weather_data):
