@@ -101,8 +101,16 @@ def find_min(weather_data):
     Returns:
         The minium value and it's position in the list.
     """
-    pass
-
+    print(f"weather_data type: {type(weather_data [0])}") #expected value
+    convert_data = []
+    for element in weather_data:
+        convert_data.append(float(element))
+    print(f"convert_data: {convert_data}") #expected value
+    print(f"convert_data type: {type(convert_data [0])}") #expected value
+    print(min(convert_data)) #expected value but not the second half of the answer.
+    return(min(convert_data))
+    
+print(find_min([-10, -8, 2, -16, 4]))
 
 def find_max(weather_data):
     """Calculates the maximum value in a list of numbers.
