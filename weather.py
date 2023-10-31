@@ -146,7 +146,33 @@ def generate_summary(weather_data):
     Returns:
         A string containing the summary information.
     """
-    pass
+    print(f"weather_data: {weather_data}")
+    max_temp = find_max(weather_data)
+    print(f"max_temp: {max_temp}")
+    max_temp_date = 
+    print(f"max_temp_date: {max_temp_date}")
+    min_temp = find_min(weather_data)
+    print(f"min_temp: {min_temp}")
+    min_temp_date = 
+    print(f"min_temp_date: {min_temp_date}")
+    mean_low = 
+    print(f"mean_low: {mean_low}")
+    mean_high = 
+    print(f"mean_high: {mean_high}")
+
+
+    summary = (f"5 Day Overview \n  The lowest temperature will be {format_temperature(min_temp)}, and will occur on {convert_date(min_temp_date)}.\n  The highest temperature will be {format_temperature(max_temp)}, and will occur on {convert_date(max_temp_date)}.\n  The average low this week is {format_temperature(mean_low)}.\n  The average high this week is {format_temperature(mean_high)}.")
+    
+    return summary
+
+
+print(generate_summary([
+            ["2021-07-02T07:00:00+08:00", 49, 67],
+            ["2021-07-03T07:00:00+08:00", 57, 68],
+            ["2021-07-04T07:00:00+08:00", 56, 62],
+            ["2021-07-05T07:00:00+08:00", 55, 61],
+            ["2021-07-06T07:00:00+08:00", 53, 62]
+        ]))
 
 # FIXME:
 def generate_daily_summary(weather_data):
