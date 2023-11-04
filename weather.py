@@ -178,13 +178,10 @@ def generate_summary(weather_data):
     min_temp = find_min(c_low_input)
     # print(f"min_temp: {min_temp}")
     
-    
-
     # WORKING! find max temps 
     # max temp and position in list
     max_temp = find_max(c_high_input)
     # print(f"max_temp: {max_temp}")
-    
     
     # WORKING! find averages
     mean_low = round(calculate_mean(c_low_input), 1)
@@ -204,7 +201,7 @@ def generate_summary(weather_data):
             min_temp_date = date
     # print(f"min_temp_date: {min_temp_date}")
 
-    # TODO: find date of max temp
+    # WORKING! find date of max temp
     for date in date_text:
         if max_temp[1] == date_text.index(date):
             max_temp_date = date
@@ -214,7 +211,7 @@ def generate_summary(weather_data):
 
     return summary
 
-# FIXME:
+# WORKING!
 def generate_daily_summary(weather_data):
     """Outputs a daily summary for the given weather data.
 
@@ -223,5 +220,22 @@ def generate_daily_summary(weather_data):
     Returns:
         A string containing the summary information.
     """
-    pass
 
+    summary = ""
+    for data in weather_data:
+        summary +=(
+                f"---- {convert_date(data[0])} ----\n"
+                f"  Minimum Temperature: {format_temperature(convert_f_to_c(data[1]))}\n"
+                f"  Maximum Temperature: {format_temperature(convert_f_to_c(data[2]))}\n\n"
+        )
+    print(summary)
+    return summary
+    
+
+generate_daily_summary([
+            ["2021-07-02T07:00:00+08:00", 49, 67],
+            ["2021-07-03T07:00:00+08:00", 57, 68],
+            ["2021-07-04T07:00:00+08:00", 56, 62],
+            ["2021-07-05T07:00:00+08:00", 55, 61],
+            ["2021-07-06T07:00:00+08:00", 53, 62]
+        ])
