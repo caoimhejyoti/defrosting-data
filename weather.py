@@ -211,7 +211,7 @@ def generate_summary(weather_data):
 
     return summary
 
-# WORKING!
+# COMPLETE!
 def generate_daily_summary(weather_data):
     """Outputs a daily summary for the given weather data.
 
@@ -231,11 +231,3 @@ def generate_daily_summary(weather_data):
     print(summary)
     return summary
     
-
-generate_daily_summary([
-            ["2021-07-02T07:00:00+08:00", 49, 67],
-            ["2021-07-03T07:00:00+08:00", 57, 68],
-            ["2021-07-04T07:00:00+08:00", 56, 62],
-            ["2021-07-05T07:00:00+08:00", 55, 61],
-            ["2021-07-06T07:00:00+08:00", 53, 62]
-        ])
