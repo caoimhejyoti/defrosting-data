@@ -71,7 +71,7 @@ def calculate_mean(weather_data):
     return mean
 # print(calculate_mean([49, 57, 56, 55, 53]))
 
-# FIXME:
+# COMPLETE! 
 def load_data_from_csv(csv_file):
     """Reads a csv file and stores the data in a list.
     
@@ -80,18 +80,18 @@ def load_data_from_csv(csv_file):
     Returns:
         A list of lists, where each sublist is a (non-empty) line in the csv file.
     """
-
-    # with open("tests/data/example_two.csv", encoding="utf-8") as csv_file:
-    reader = csv.reader(csv_file)
-    next(reader)
-    my_list = []
-    for line in reader:
-        # if the list is blank....
-        if line == None:
-            next
-        else:
-            my_list.append([f"{line[0]}", int(line[1]), int(line[2])])
-    return my_list
+    with open(csv_file) as csv_file:
+        print(f"csv_file: {csv_file}")
+        reader = csv.reader(csv_file)
+        next(reader)
+        my_list = []
+        for line in reader:
+            if len(line)==0:
+                continue
+            else:
+                my_list.append([f"{line[0]}", int(line[1]), int(line[2])])
+        print (f"my_list: {my_list}")
+        return my_list
 
 # COMPLETE!
 def find_min(weather_data):
@@ -138,15 +138,75 @@ def find_max(weather_data):
         return (max_value, position[-1])
 
 # FIXME:
-def generate_summary(weather_data):
-    """Outputs a summary for the given weather data.
+# def generate_summary(weather_data):
+#     """Outputs a summary for the given weather data.
 
-    Args:
-        weather_data: A list of lists, where each sublist represents a day of weather data.
-    Returns:
-        A string containing the summary information.
-    """
-    pass
+#     Args:
+#         weather_data: A list of lists, where each sublist represents a day of weather data.
+#     Returns:
+#         A string containing the summary information.
+#     """
+#     print(weather_data)
+
+#     # separate input into low data, high data and date data
+#     input_data = {
+#                 "low_input":[],
+#                 "high_input":[], 
+#                 "date_input":[],
+#                 }
+    
+#     # run through data to split into dictionary.
+#     for key, value in input_data.items():
+#         pass
+
+#     # convert temperatures into celcius
+#     for value in input_data["high_input"]:
+#         convert_f_to_c(value)
+#     print(f"high_input in ºC: {input_data['high_input']}")
+    
+#     for value in input_data["low_input"]:
+#         convert_f_to_c(value)
+#     print(f"low_input in ºC: {input_data['low_input']}")
+
+#     # find min temps and date of temp
+#     min_temp = find_min(input_data["low_input"])
+#     # print(f"min_temp: {min_temp}")
+    
+#     # min_temp_date = 
+#     # print(f"min_temp_date: {min_temp_date}")
+
+#     # find max temps and date of temp
+#     max_temp = find_max(input_data["high_input"])
+#     # print(f"max_temp: {max_temp}")
+    
+#     # max_temp_date = 
+#     # print(f"max_temp_date: {max_temp_date}")
+
+#     # find averages
+#     mean_low = calculate_mean(input_data["low_input"])
+#     # print(f"mean_low: {mean_low}")
+
+#     mean_high = calculate_mean(input_data["high_input"])
+#     # print(f"mean_high: {mean_high}")
+
+#     # convert dates into text
+
+
+
+
+
+#     # summary = (f"5 Day Overview \n  The lowest temperature will be {format_temperature(min_temp)}, and will occur on {convert_date(min_temp_date)}.\n  The highest temperature will be {format_temperature(max_temp)}, and will occur on {convert_date(max_temp_date)}.\n  The average low this week is {format_temperature(mean_low)}.\n  The average high this week is {format_temperature(mean_high)}.")
+    
+#     return
+#     # pass
+
+# print(generate_summary([
+#             ["2021-07-02T07:00:00+08:00", 49, 67],
+#             ["2021-07-03T07:00:00+08:00", 57, 68],
+#             ["2021-07-04T07:00:00+08:00", 56, 62],
+#             ["2021-07-05T07:00:00+08:00", 55, 61],
+#             ["2021-07-06T07:00:00+08:00", 53, 62]
+#         ]))
 
 # FIXME:
 def generate_daily_summary(weather_data):

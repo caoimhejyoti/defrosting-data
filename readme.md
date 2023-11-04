@@ -39,6 +39,8 @@ https://bobbyhadz.com/blog/python-remove-everything-after-character
 
 https://www.datacamp.com/tutorial/converting-strings-datetime-objects
 
+https://www.atatus.com/blog/python-converting-lsts-to-dictionaries/
+
 ## License
 
 This project is using the following license:
