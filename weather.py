@@ -39,9 +39,12 @@ def convert_f_to_c(temp_in_farenheit):
     Returns:
         A float representing a temperature in degrees celcius, rounded to 1dp.
     """
-    temp_conversion = ((float(temp_in_farenheit) - 32)* 5/9)
-    celcius = round(temp_conversion,1)
-    return celcius
+    # temp_conversion = ((float(temp_in_farenheit) - 32)* 5/9)
+    # celcius = round(temp_conversion,1)
+
+    temp_conversion = round(((float(temp_in_farenheit) - 32)* 5/9),1)
+    
+    return temp_conversion
 
 # COMPLETE!
 def calculate_mean(weather_data):
