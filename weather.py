@@ -39,9 +39,12 @@ def convert_f_to_c(temp_in_farenheit):
     Returns:
         A float representing a temperature in degrees celcius, rounded to 1dp.
     """
-    temp_conversion = ((float(temp_in_farenheit) - 32)* 5/9)
-    celcius = round(temp_conversion,1)
-    return celcius
+    # temp_conversion = ((float(temp_in_farenheit) - 32)* 5/9)
+    # celcius = round(temp_conversion,1)
+
+    temp_conversion = round(((float(temp_in_farenheit) - 32)* 5/9),1)
+    
+    return temp_conversion
 
 # COMPLETE!
 def calculate_mean(weather_data):
@@ -69,7 +72,6 @@ def load_data_from_csv(csv_file):
         A list of lists, where each sublist is a (non-empty) line in the csv file.
     """
     with open(csv_file) as csv_file:
-        print(f"csv_file: {csv_file}")
         reader = csv.reader(csv_file)
         next(reader)
         my_list = []
@@ -78,7 +80,6 @@ def load_data_from_csv(csv_file):
                 continue
             else:
                 my_list.append([f"{line[0]}", int(line[1]), int(line[2])])
-        print (f"my_list: {my_list}")
         return my_list
 
 # COMPLETE!
@@ -136,9 +137,7 @@ def generate_summary(weather_data):
     Returns:
         A string containing the summary information.
     """
-    print(f"weather_data: {weather_data}")
-
-    # separate input into low data, high data and date data
+    # variables
     date_input=[]
     low_input=[]
     high_input=[]
@@ -151,58 +150,47 @@ def generate_summary(weather_data):
         date_input.append(row[0])
         low_input.append(row[1])
         high_input.append(row[2])
-
+    
     # WORKING! convert temperatures into celcius
     for value in low_input:
         c_low_input.append(convert_f_to_c(value))
-    # print(f"c_low_input in ºC: {c_low_input}")
-
+    
     for value in high_input:
         c_high_input.append(convert_f_to_c(value))
-    # print(f"c_high_input in ºC: {c_high_input}")
     
     # WORKING! find min temps 
     # min temp and position in list
     min_temp = find_min(c_low_input)
-    # print(f"min_temp: {min_temp}")
     
     # WORKING! find max temps 
     # max temp and position in list
     max_temp = find_max(c_high_input)
-    # print(f"max_temp: {max_temp}")
     
     # WORKING! find averages
     mean_low = round(calculate_mean(c_low_input), 1)
-    # print(f"mean_low: {mean_low}")
-
     mean_high = round(calculate_mean(c_high_input), 1)
-    # print(f"mean_high: {mean_high}")
-
-    # convert dates into text
+    
+    # WORKING! convert dates into text
     for value in date_input:
         date_text.append(convert_date(value))
-    # print(f"date_text: {date_text}")
     
     # WORKING! find date of min temp
     for date in date_text:
         if min_temp[1] == date_text.index(date):
             min_temp_date = date
-    # print(f"min_temp_date: {min_temp_date}")
-
+    
     # WORKING! find date of max temp
     for date in date_text:
         if max_temp[1] == date_text.index(date):
             max_temp_date = date
-    # print(f"max_temp_date: {max_temp_date}")
-
+    
     summary = (f"{len(weather_data)} Day Overview\n  The lowest temperature will be {format_temperature(min_temp[0])}, and will occur on {min_temp_date}.\n  The highest temperature will be {format_temperature(max_temp[0])}, and will occur on {max_temp_date}.\n  The average low this week is {format_temperature(mean_low)}.\n  The average high this week is {format_temperature(mean_high)}.\n")
-
+    
     return summary
 
 # COMPLETE!
 def generate_daily_summary(weather_data):
     """Outputs a daily summary for the given weather data.
-
     Args:
         weather_data: A list of lists, where each sublist represents a day of weather data.
     Returns:
@@ -216,5 +204,4 @@ def generate_daily_summary(weather_data):
                 f"  Minimum Temperature: {format_temperature(convert_f_to_c(data[1]))}\n"
                 f"  Maximum Temperature: {format_temperature(convert_f_to_c(data[2]))}\n\n"
         )
-    print(summary)
     return summary
