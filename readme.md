@@ -6,7 +6,7 @@
 
 ---
 
-[About](#about) ✦ [Project Requirements](#project-requirements) ✦[Wireframes](#wireframes) ✦ [Responsiveness](#responsiveness) ✦ [Future Developments](#future-developments) ✦ [Resources](#resources) ✦ [License](#license) ✦ [Contact](#contact)
+[About](#about) ✦ [Project Requirements](#project-requirements) ✦ [Test Results](#test-results) ✦ [Resources](#resources) ✦ [License](#license) ✦ [Contact](#contact)
 
 ---
 
@@ -24,6 +24,12 @@ https://github.com/SheCodesAus/plus-weather-project-template
 The requirment for this project was to make all the test files pass by creating functions based on docustring information, within the weather.py file.
 
 The docustring information has been left in the code to provide clear information as to what each function is doing.
+
+## Test Results
+
+![Screenshot showing test files passing](<assets/Screenshot 2023-11-11 at 10.26.01.png>)
+
+![Screenshot showing test files passing](<assets/Screenshot 2023-11-11 at 10.26.17.png>)
 
 ## Resources
 
